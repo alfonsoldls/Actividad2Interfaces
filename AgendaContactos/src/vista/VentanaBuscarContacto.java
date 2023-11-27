@@ -37,8 +37,9 @@ public class VentanaBuscarContacto extends JDialog {
 	public VentanaBuscarContacto(Vista ventana1) {
 		
 		this.ventana1 = ventana1;
-		Image icono = new ImageIcon("imgs/adduser.png").getImage();
+		Image icono = new ImageIcon("imgs/searchuser.png").getImage();
 		setIconImage(icono);
+		setTitle("Buscar contacto");
 		setDefaultCloseOperation(JDialog.HIDE_ON_CLOSE);
 		setSize(300, 300);
 		setResizable(false);
@@ -61,14 +62,14 @@ public class VentanaBuscarContacto extends JDialog {
 		//Set title
 		titulo = new JLabel("Buscar Contacto");
 		titulo.setBounds(35, 15, 250, 50);
-		titulo.setFont(Vista.setMilkuFont(0, 34f));
+		titulo.setFont(Vista.createFont(0, 34f,"fonts/Milku.otf"));
 		titulo.setForeground(Color.BLACK);
 		add(titulo);
 		
 		//set etiqueta nombre
 		nombre = new JLabel("Nombre:");
 		nombre.setBounds(35, 75, 75, 25);
-		nombre.setFont(Vista.setMilkuFont(0, 20f));
+		nombre.setFont(Vista.createFont(0, 17f,"fonts/Roboto.ttf"));
 		nombre.setForeground(Color.BLACK);
 		add(nombre);
 
@@ -88,7 +89,7 @@ public class VentanaBuscarContacto extends JDialog {
 		//Configuracion estilo del Header
 		JTableHeader header = table.getTableHeader();
 		header.setReorderingAllowed(false);
-		header.setFont(Vista.setMilkuFont(0,15f));
+		header.setFont(Vista.createFont(0,15f,"fonts/Roboto.ttf"));
 		MatteBorder headerBorder = new MatteBorder(0, 0, 2, 0, Color.BLACK);
 		header.setBorder(headerBorder);
 		header.setResizingAllowed(false);
@@ -100,7 +101,7 @@ public class VentanaBuscarContacto extends JDialog {
 	     renderer.setBackground(new Color(255,255,255,200));
 	     for (int i = 0; i < table.getColumnCount(); i++) {
 	          table.getColumnModel().getColumn(i).setCellRenderer(renderer);
-	          table.setFont(Vista.setMilkuFont(0, 12f));
+	          table.setFont(Vista.createFont(0, 12f,"fonts/Roboto.ttf"));
 	     }
 	     table.setShowHorizontalLines(false);	//No muestra lineas horizontales
 	     table.setBackground(Color.white);		//color de los values = blanco

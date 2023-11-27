@@ -47,14 +47,14 @@ public class VentanaNuevoContacto extends JDialog{
 		//Set Title
 		titulo = new JLabel("Nuevo Contacto");
 		titulo.setBounds(35, 15, 250, 50);
-		titulo.setFont(Vista.setMilkuFont(0, 34f));
+		titulo.setFont(Vista.createFont(0, 34f,"fonts/Milku.otf"));
 		titulo.setForeground(Color.BLACK);
 		add(titulo);
 		
 		//set etiqueta nombre
 		nombre = new JLabel("Nombre:");
 		nombre.setBounds(35, 75, 75, 25);
-		nombre.setFont(Vista.setMilkuFont(0, 20f));
+		nombre.setFont(Vista.createFont(0, 17f,"fonts/Roboto.ttf"));
 		nombre.setForeground(Color.BLACK);
 		add(nombre);
 		
@@ -66,7 +66,7 @@ public class VentanaNuevoContacto extends JDialog{
 		//set etiqueta telefono
 		telefono = new JLabel("Telefono:");
 		telefono.setBounds(35, 120, 75, 25);
-		telefono.setFont(Vista.setMilkuFont(0, 20f));
+		telefono.setFont(Vista.createFont(0, 17f,"fonts/Roboto.ttf"));
 		telefono.setForeground(Color.BLACK);
 		add(telefono);
 

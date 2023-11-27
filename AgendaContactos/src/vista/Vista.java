@@ -72,7 +72,7 @@ public class Vista extends JFrame {
 		//SET TITLE
 		titulo = new JLabel("Mis Contactos");
 		titulo.setHorizontalAlignment(SwingConstants.CENTER);
-		titulo.setFont(setMilkuFont(Font.BOLD,42f));
+		titulo.setFont(createFont(Font.BOLD,42f,"fonts/Milku.otf"));
 		titulo.setForeground(Color.BLACK);
 		titulo.setBounds(102,87,325,157);
 		add(titulo);
@@ -122,7 +122,7 @@ public class Vista extends JFrame {
 		//Configuracion estilo del Header
 		JTableHeader header = table.getTableHeader();
 		header.setReorderingAllowed(false);
-		header.setFont(setMilkuFont(0,15f));
+		header.setFont(createFont(0,15f,"fonts/Roboto.ttf"));
 		MatteBorder headerBorder = new MatteBorder(0, 0, 2, 0, Color.BLACK);
 		header.setBorder(headerBorder);
 		header.setResizingAllowed(false);
@@ -135,7 +135,7 @@ public class Vista extends JFrame {
 	     renderer.setBackground(new Color(255,255,255,200));
 	     for (int i = 0; i < table.getColumnCount(); i++) {
 	          table.getColumnModel().getColumn(i).setCellRenderer(renderer);
-	          table.setFont(setMilkuFont(0, 12f));
+	          table.setFont(createFont(0, 12f,"fonts/Roboto.ttf"));
 	     }
 	     
 	     table.setShowHorizontalLines(false);
@@ -160,7 +160,7 @@ public class Vista extends JFrame {
 		botonBuscar.addActionListener(controlador);
 	}
 	
-	//Metodo que carga los datos del TXT y los pone en la tabla al arrancar la aplicacion
+	//Metodo que carga los datos del TXT y los pone en la tabla al arrancar la aplicación
 	private void cargarDatos() {
 		for(Contacto c : Contacto.getContactos()) {
 			String[] nuevoContacto = {c.getNombre(),c.getTelefono()};
@@ -169,10 +169,10 @@ public class Vista extends JFrame {
 			
 	}
 	
-	//Metodo que devuelve la Fuente que se ha elegido como nueva fuente.
-	public static Font setMilkuFont(int style ,float size) {
+	//Metodo que devuelve la Fuente, al que se le pasa por parametro, Estilo, Tamaño y Path de la fuente que queramos poner
+	public static Font createFont(int style ,float size, String path) {
 		try {
-			Font titleFont = Font.createFont(Font.TRUETYPE_FONT, new File("fonts/Milku.otf"));
+			Font titleFont = Font.createFont(Font.TRUETYPE_FONT, new File(path));
 			titleFont = titleFont.deriveFont(style, size);
 			
 			return titleFont;
